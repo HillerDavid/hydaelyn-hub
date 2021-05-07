@@ -1,14 +1,13 @@
 const axios = require("axios");
+const { response } = require("express");
 
 module.exports = {
-    findAll: function (req, res) {
-        res.send("SUCCESS");
-
-
-    },
     search: function (req, res) {
-        // const { query: params } = req;
-
+        axios.get(`/character/search?name=${req.params.name}&private_key=${process.env.API_KEY}`)
+            .then(result => {
+             console.log(result.data.Results[0])
+                res.json(result.data.Results[0])
+            })
     }
 };
 
