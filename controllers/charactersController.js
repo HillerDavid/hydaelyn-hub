@@ -5,7 +5,6 @@ module.exports = {
     search: function (req, res) {
         axios.get(`/character/search?name=${req.params.name}&private_key=${process.env.API_KEY}`)
             .then(result => {
-             console.log(result.data.Results[0])
                 res.json(result.data.Results[0])
             })
     }

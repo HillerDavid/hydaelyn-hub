@@ -1,15 +1,12 @@
 import './App.css';
-import API from './utils/API'
+import CharacterCard from './Components/CharacterCard';
 
 function App() {
-
-  const characterList = API.searchCharacter("kalim arri")
-  console.log(characterList.data)
 
   return (
     <div className="App">
       <header className="App-header">
-        {/* {characterList.data.Name} */}
+        <CharacterCard></CharacterCard>
       </header>
     </div>
   );
