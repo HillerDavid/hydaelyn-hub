@@ -4,8 +4,7 @@ const express = require("express");
 const app = express();
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
-const http = require('http');
-const https = require('https');
+const server = require('http').createServer(app);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -15,9 +14,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.use(routes);
-// const httpServer = http.createServer(app);
-// const httpsServer = https.createServer(app);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`🌎  ==> API Server now listening on PORT: ${PORT} `)
 })

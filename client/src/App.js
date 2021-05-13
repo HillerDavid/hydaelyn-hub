@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <input type="text"></input>
         <CharacterCard></CharacterCard>
       </header>
     </div>
